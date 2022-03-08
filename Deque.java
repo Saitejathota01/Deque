@@ -7,7 +7,7 @@ public class Deque<Item> implements Iterable<Item> {
     public Deque<Item>.Node current;
     private class Node
     {
-        Item Node;
+        Item item;
         Node next;
     }
     // construct an empty deque
@@ -28,6 +28,13 @@ public class Deque<Item> implements Iterable<Item> {
 
     // add the item to the front
     public void addFirst(Item item)
+    {
+        Node second=first;
+        first = new Node();
+        first.item=item;
+        first.next=second;
+        n++;
+    }
 
     // add the item to the back
     public void addLast(Item item)
